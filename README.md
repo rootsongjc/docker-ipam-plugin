@@ -84,8 +84,3 @@ https://docs.docker.com/engine/extend/plugins
 https://github.com/docker/libnetwork/blob/master/docs/ipam.md
 https://github.com/docker/go-plugins-helpers
 
-#### About
-
-Author: chao.ma@tendcloud.com
-
-Copyright©TalkingData.com
