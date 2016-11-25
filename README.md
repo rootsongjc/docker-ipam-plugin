@@ -3,7 +3,7 @@
 #### Overview
 
 Create a new docker custom network named "mynet" with a bridge br0.
-Docker container allocated on different hosts which started with "mynet" can be assgined one IP address by yourself or automated assgined so that the containers can be accessed by each others.
+Docker container allocated on different hosts which started with "mynet" can be assgined a IP address by yourself or automated assgined so that the containers can be accessed by each others and the hosts.
 
 #### Design
 
@@ -45,6 +45,8 @@ DELAY=0
 
 #### Usage
 Enviromnent 
+
+Docker: 1.11.1
 
 OS: CentOS7.1
 
