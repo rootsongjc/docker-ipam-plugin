@@ -53,24 +53,24 @@ OS: CentOS7.1
 Gateway: 172.16.16.1
 
 Host network IP range: 172.16.20.54/20 - 172.16.20.58/20
-Build the project and put it at /usr/bin/oam-docker-ipam  
+Build the project and put it at /usr/bin/docker-ipam-plugin  
 Etcd cluster: http://172.16.20.53:2379,http://172.16.20.54:2379,http://172.16.20.55:2379
 
 1.  Assign host IP 
-      oam-docker-ipam --cluster-store=http://172.16.20.53:2379，http://172.16.20.54:2379，http://172.16.20.55:2379 host-range --ip-start 172.16.20.54/20 --ip-end 172.16.20.58/20 --gateway 172.16.16.1
+      docker-ipam-plugin --cluster-store=http://172.16.20.53:2379，http://172.16.20.54:2379，http://172.16.20.55:2379 host-range --ip-start 172.16.20.54/20 --ip-end 172.16.20.58/20 --gateway 172.16.16.1
 
 2.  Assign docker IP
-      oam-docker-ipam --cluster-store=http://172.16.20.53:2379，http://172.16.20.54:2379，http://172.16.20.55:2379 ip-range --ip-start 172.16.21.100/20 --ip-end 172.16.21.200/20
+      docker-ipam-plugin --cluster-store=http://172.16.20.53:2379，http://172.16.20.54:2379，http://172.16.20.55:2379 ip-range --ip-start 172.16.21.100/20 --ip-end 172.16.21.200/20
 
 3.  Run docker ipam plugin
-      nohup oam-docker-ipam --debug=true --cluster-store=http://172.16.20.53:2379,http://172.16.20.54:2379,http://172.16.20.55:2379 server 2>&1 >> /var/log/oam-docker-ipam.log &
+      nohup docker-ipam-plugin --debug=true --cluster-store=http://172.16.20.53:2379,http://172.16.20.54:2379,http://172.16.20.55:2379 server 2>&1 >> /var/log/docker-ipam-plugin.log &
 
 4.  Create custom network
-      oam-docker-ipam --cluster-store=http://172.16.20.53:2379，http://172.16.20.54:2379，http://172.16.20.55:2379 create-network --ip 172.16.20.54
+      docker-ipam-plugin --cluster-store=http://172.16.20.53:2379，http://172.16.20.54:2379，http://172.16.20.55:2379 create-network --ip 172.16.20.54
 
 ####Info
 
-- Usage: oam-docker-ipam --help
+- Usage: docker-ipam-plugin --help
 
 
 - cluster-store defualt http://127.0.0.1:2379
